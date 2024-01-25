@@ -1,0 +1,10 @@
+{
+  "language": "Language: ",
+  "metrics" : "Unit of measurement: ",
+  "search" : "Search by city name",
+  "search-btn": "Add",
+  "felslike": "Feels like: ",
+  "wind": "Wind: ",
+  "humidity": "Humidity: ",
+  "pressure": "Pressure: "
+}

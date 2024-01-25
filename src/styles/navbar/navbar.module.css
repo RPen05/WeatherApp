@@ -1,0 +1,67 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    width: auto;
+    position: relative;
+}
+
+.searchBar{
+    margin: 0 auto;
+}
+
+.settings{
+    display: flex;
+}
+
+.metrics{
+    position: absolute;
+    right: 18%;
+    top: 35%;
+}
+
+.metricbtn{
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border-color: #eeeeee;
+}
+
+.metricbtn:hover{
+    cursor: pointer;
+    background-color: #459de9;
+    color: white;
+    border-color: white;
+    box-shadow: none;
+    transition: all .2s linear;
+}
+
+.lang{
+    position: absolute;
+    right: 0;
+    top: 35%;
+}
+
+.langbtn{
+    margin-right: 5px;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border-color: #eeeeee;
+}
+
+.langbtn:hover{
+    cursor: pointer;
+    background-color: #459de9;
+    color: white;
+    border-color: white;
+    box-shadow: none;
+    transition: all .2s linear;
+}
+
+.active{
+    background-color: #459de9;
+    color: white;
+    border-color: white;
+}
