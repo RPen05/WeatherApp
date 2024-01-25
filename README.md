@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# React WeatherApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание проекта
+Приложение о погоде по городам по всему миру с использованием openweathermap API и их геокодера.
 
-## Available Scripts
+### Версия Node
+При создании использована версия Node v20.10.0. Для переключения между версиями Node в терминале можете использовать команду:
 
-In the project directory, you can run:
+`nvm use v20.10.0`
 
-### `npm start`
+### Установка проекта
+Для развертывания проекта локально выполните следующие шаги:
+`git clone https://github.com/RPen05/WeatherApp.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`npm install`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Запуск сервера
+Для запуска сервера используйте команду:
 
-### `npm test`
+`npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Текст тестового задания
+## React.JS | Test
+Must init app with Create-React-App using TypeScript
+Must using OpenWeatherMap API
 
-### `npm run build`
+If you need Google Maps API for geolocation you can use provided API key:
+AIzaSyA9bslaj5Bl5nLuQQXe8rr_PkhDvvZqzMs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Acceptance criteria:
+1.Displaying the current weather of the user by his location by default if the user granted location access.
+2.Adding a city to the list by autocompleting search and save it to application settings.
+3.Switching from Celsius to Fahrenheit by clicking on the corresponding sign, for each card separately. Should be saved as application settings.
+4.Language switching globally for all displayed cities. Available languages are English, Ukrainian, and Russian. Should be saved as application settings. (for translation use this library https://react.i18next.com)
+5.Displaying an icon from the OpenWeatherMap service
+6.Using this request https://api.openweathermap.org/data/2.5/forecast?q= {city_name }&appid={API_KEY} create a graph of temperature and date dependencies (using any library for plotting)
+7.The layout of the application must be made according to the design provided
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The application should store settings in LocalStorage.
+For state management, you should use Redux or MobX.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Комментарии после выполнения тестового задания
+1.Поисковая строка иногда подлагивает. Если после ввода запроса не появляется поисковая выдача, попробуйте убрать фокус с поисковой строки и снова вернуть его.
+2.Определение текущей геопозиции пользователя невозможно через браузерное API или Google APIs, так как локальный проект имеет протокол HTTP, и API просто не отработает. Функция по определению геопозиции реализована в хуке useDefaultWeatherData.
+3.Желательно использовать стабильное интернет-подключение, так как Axios может не хватить времени, чтобы получить и обработать данные от API.
+4.Если интернет не стабилен и данные не загружаются, попробуйте в места, где делает запрос, добавить задержку:
+`const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${temperatureUnit}&lang=${language}&appid=${apiKey}`, { timeout: #### });`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+  
