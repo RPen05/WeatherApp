@@ -69,9 +69,6 @@ const WeatherItem:React.FC<WeatherItemProps> = ({weatherData, onRemove}) => {
                         <div className={WeatherItemCSS.weatherState}>{weatherData.weather[0].description}</div>
                     </div>
                 </div>
-                <div className={WeatherItemCSS.weatherItemBody}>
-                    Graph
-                </div>
                 <div className={WeatherItemCSS.weatherItemFooter}>
                     <div className={WeatherItemCSS.weatherItemFooterLeft}>
                         <div className={WeatherItemCSS.weatherItemFooterTemp}>
